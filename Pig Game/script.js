@@ -13,6 +13,8 @@ const player2 = document.querySelector(".player--2");
 let currentScore = 0;
 let activePlayer = 1;
 let roll = 0;
+let highScore1 = 0;
+let highScore2 = 0;
 
 btnRoll.addEventListener("click", diceRoll);
 btnHold.addEventListener("click", hold);
@@ -36,10 +38,16 @@ function scores() {
 }
 
 function hold() {
-  activePlayer == 1
-    ? (score1.textContent = currentScore)
-    : (score2.textContent = currentScore);
-    currentScore = 0;
+  document.querySelector(`#current--${activePlayer}`).textContent = 0;
+  if (activePlayer == 1) {
+    highScore1 += currentScore;
+    score1.textContent = highScore1;
+  } else {
+    highScore2 += currentScore;
+    score2.textContent = highScore2;
+  }
+  currentScore = 0;
+  switchActive();
 }
 
 function switchActive() {
