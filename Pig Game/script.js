@@ -1,7 +1,9 @@
 "use strict";
 
 const btnRoll = document.querySelector(".btn--roll");
-const score1 = document.getElementById("score-1");
+const btnHold = document.querySelector(".btn--hold");
+const score1 = document.getElementById("score--1");
+const score2 = document.getElementById("score--2");
 const diceItself = document.querySelector(".dice");
 const current1 = document.querySelector("#current--1");
 const current2 = document.querySelector("#current--2");
@@ -13,6 +15,7 @@ let activePlayer = 1;
 let roll = 0;
 
 btnRoll.addEventListener("click", diceRoll);
+btnHold.addEventListener("click", hold);
 
 function diceRoll() {
   roll = Math.floor(Math.random() * 6) + 1;
@@ -30,6 +33,13 @@ function scores() {
     current1.textContent = 0;
     current2.textContent = 0;
   }
+}
+
+function hold() {
+  activePlayer == 1
+    ? (score1.textContent = currentScore)
+    : (score2.textContent = currentScore);
+    currentScore = 0;
 }
 
 function switchActive() {
