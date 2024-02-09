@@ -69,7 +69,7 @@ function switchActive() {
 }
 
 function isGameOver() {
-  if (totalScore1 >= 10 || totalScore2 >= 10) {
+  if (totalScore1 >= 100 || totalScore2 >= 100) {
     btnRoll.disabled = true;
     btnHold.disabled = true;
     document.querySelector(`#name--${activePlayer}`).textContent = "You win!";
@@ -85,20 +85,20 @@ function newGame() {
   if (player2.classList.contains("player--active")) {
     switchActive();
   }
+  resetGame();
+}
+
+function resetGame() {
   currentScore = 0;
   activePlayer = 1;
   roll = 0;
   totalScore1 = 0;
   totalScore2 = 0;
-
   score1.textContent = 0;
   score2.textContent = 0;
-
   current1.textContent = 0;
   current2.textContent = 0;
-
   btnRoll.disabled = false;
   btnHold.disabled = false;
-
   diceItself.src = "dice-1.png";
 }
