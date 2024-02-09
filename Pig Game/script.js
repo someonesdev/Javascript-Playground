@@ -13,8 +13,9 @@ const player2 = document.querySelector(".player--2");
 let currentScore = 0;
 let activePlayer = 1;
 let roll = 0;
-let highScore1 = 0;
-let highScore2 = 0;
+let totalScore1 = 0;
+let totalScore2 = 0;
+let gameOver = false;
 
 btnRoll.addEventListener("click", diceRoll);
 btnHold.addEventListener("click", hold);
@@ -40,14 +41,14 @@ function scores() {
 function hold() {
   document.querySelector(`#current--${activePlayer}`).textContent = 0;
   if (activePlayer == 1) {
-    highScore1 += currentScore;
-    score1.textContent = highScore1;
+    totalScore1 += currentScore;
+    score1.textContent = totalScore1;
   } else {
-    highScore2 += currentScore;
-    score2.textContent = highScore2;
+    totalScore2 += currentScore;
+    score2.textContent = totalScore2;
   }
   currentScore = 0;
-  switchActive();
+  isGameOver();
 }
 
 function switchActive() {
@@ -59,5 +60,14 @@ function switchActive() {
     activePlayer = 1;
     player2.classList.remove("player--active");
     player1.classList.add("player--active");
+  }
+}
+
+function isGameOver() {
+  if (totalScore1 >= 10 || totalScore2 >= 10) {
+    btnRoll.disabled = true;
+    btnHold.disabled = true;
+  } else {
+    switchActive();
   }
 }
