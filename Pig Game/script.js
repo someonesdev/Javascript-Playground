@@ -2,6 +2,7 @@
 
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
+const btnNew = document.querySelector(".btn--new");
 const score1 = document.getElementById("score--1");
 const score2 = document.getElementById("score--2");
 const diceItself = document.querySelector(".dice");
@@ -15,10 +16,10 @@ let activePlayer = 1;
 let roll = 0;
 let totalScore1 = 0;
 let totalScore2 = 0;
-let gameOver = false;
 
 btnRoll.addEventListener("click", diceRoll);
 btnHold.addEventListener("click", hold);
+btnNew.addEventListener("click", newGame);
 
 function diceRoll() {
   roll = Math.floor(Math.random() * 6) + 1;
@@ -67,7 +68,28 @@ function isGameOver() {
   if (totalScore1 >= 10 || totalScore2 >= 10) {
     btnRoll.disabled = true;
     btnHold.disabled = true;
+    document.querySelector(`#name--${activePlayer}`).textContent = "You win!";
   } else {
     switchActive();
   }
+}
+
+function newGame() {
+  document.querySelector(
+    `#name--${activePlayer}`
+  ).textContent = `Player ${activePlayer}`;
+  if (player2.classList.contains("player--active")) {
+    switchActive();
+  }
+  currentScore = 0;
+  activePlayer = 1;
+  roll = 0;
+  totalScore1 = 0;
+  totalScore2 = 0;
+
+  score1.textContent = 0;
+  score2.textContent = 0;
+
+  current1.textContent = 0;
+  current2.textContent = 0;
 }
