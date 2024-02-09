@@ -24,6 +24,10 @@ btnNew.addEventListener("click", newGame);
 function diceRoll() {
   roll = Math.floor(Math.random() * 6) + 1;
   diceItself.src = `dice-${roll}.png`;
+  diceItself.classList.add("dice-rolling");
+  setTimeout(function () {
+    diceItself.classList.remove("dice-rolling");
+  }, 500);
   scores();
 }
 
@@ -92,4 +96,9 @@ function newGame() {
 
   current1.textContent = 0;
   current2.textContent = 0;
+
+  btnRoll.disabled = false;
+  btnHold.disabled = false;
+
+  diceItself.src = "dice-1.png";
 }
