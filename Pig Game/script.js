@@ -23,6 +23,7 @@ btnNew.addEventListener("click", newGame);
 
 function diceRoll() {
   roll = Math.floor(Math.random() * 6) + 1;
+  diceItself.classList.remove("hidden");
   diceItself.src = `dice-${roll}.png`;
   diceItself.classList.add("dice-rolling");
   setTimeout(function () {
@@ -89,6 +90,7 @@ function newGame() {
 }
 
 function resetGame() {
+  diceItself.classList.add("hidden");
   currentScore = 0;
   activePlayer = 1;
   roll = 0;

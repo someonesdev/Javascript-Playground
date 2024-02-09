@@ -179,3 +179,7 @@ main {
   animation: roll 0.4s infinite linear;
   margin-left: -50px;
 }
+
+.hidden {
+  display: none;
+}
