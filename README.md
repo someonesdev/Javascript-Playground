@@ -1,2 +1,3 @@
 # Javascript-Playground
-A Javascript playground
+
+Small projects, algorithms, random testing, etc.
