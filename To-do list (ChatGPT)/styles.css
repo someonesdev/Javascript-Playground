@@ -100,10 +100,9 @@ li span {
 
 #disclaimer {
   text-align: center;
-  margin-top: 20px; /* Adjust as needed for spacing */
+  margin-top: 20px;
 }
 
 #disclaimer p {
-  font-size: 12px; /* Adjust the font size as needed */
-  color: #777777d3; /* Optional: Change the color for better readability */
+  font-size: 12px;
 }
