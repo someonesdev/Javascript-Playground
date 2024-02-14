@@ -41,16 +41,15 @@ let yourOrder = {
 
 restaurant.orderDelivery(yourOrder);
 
-
 let rest1 = {
   name: "Vivancco",
-  numGuest: 20
-}
+  numGuest: 20,
+};
 
 let rest2 = {
   name: "Plaza",
-  owner: "Marcello"
-}
+  owner: "Marcello",
+};
 
 // Logical operators
 
@@ -61,3 +60,61 @@ rest2.numGuest ??= 20;
 // If the property exists (truty), change it.
 rest2.numGuest;
 rest2.numGuest &&= 25;
+
+{
+  const game = {
+    team1: "Bayern Munich",
+    team2: "Borrussia Dortmund",
+    players: [
+      [
+        "Neuer",
+        "Pavard",
+        "Martinez",
+        "Alaba",
+        "Davies",
+        "Kimmich",
+        "Goretzka",
+        "Coman",
+        "Muller",
+        "Gnarby",
+        "Lewandowski",
+      ],
+      [
+        "Burki",
+        "Schulz",
+        "Hummels",
+        "Akanji",
+        "Hakimi",
+        "Weigl",
+        "Witsel",
+        "Hazard",
+        "Brandt",
+        "Sancho",
+        "Gotze",
+      ],
+    ],
+    score: "4:0",
+    scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+    date: "Nov 9th, 2037",
+    odds: {
+      team1: 1.33,
+      x: 3.25,
+      team2: 6.5,
+    },
+  };
+
+  let [players1, players2] = game.players;
+  let [gk, ...fieldplayers] = players1;
+
+  let allPlayers = [...players1, ...players2];
+  let players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+
+  let { team1, x: draw, team2 } = game.odds;
+
+  function printGoals(...args) {
+      console.log(`Players: ${args}. Goals: ${args.length}`);
+  }
+
+  printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
+  printGoals(...game.scored);
+}
