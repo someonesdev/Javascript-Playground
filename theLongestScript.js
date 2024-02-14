@@ -40,3 +40,24 @@ let yourOrder = {
 };
 
 restaurant.orderDelivery(yourOrder);
+
+
+let rest1 = {
+  name: "Vivancco",
+  numGuest: 20
+}
+
+let rest2 = {
+  name: "Plaza",
+  owner: "Marcello"
+}
+
+// Logical operators
+
+// If the property doesn't exist (falsy), create it.
+rest2.numGuest;
+rest2.numGuest ??= 20;
+
+// If the property exists (truty), change it.
+rest2.numGuest;
+rest2.numGuest &&= 25;
