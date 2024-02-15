@@ -9,15 +9,15 @@ let restaurant = {
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
   openingHours: {
-    thuesday: {
+    thu: {
       open: 12,
       close: 22,
     },
-    friday: {
+    fri: {
       open: 11,
       close: 23,
     },
-    saturday: {
+    sat: {
       open: 0,
       close: 24,
     },
@@ -31,6 +31,15 @@ let restaurant = {
     return `Order received! ${this.starterMenu[starterMenu]} and ${this.mainMenu[mainMenu]}, for ${name} at ${address}.`;
   },
 };
+
+const days = ["mon", 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (let day of days) {
+  if (restaurant.openingHours[day] === undefined) {
+    console.log(`On ${day}, we are closed`);
+  } else {
+    console.log(`On ${day}, we open at ${restaurant.openingHours[day].open}`);
+  }
+}
 
 let yourOrder = {
   name: "Alberto Salas",
@@ -118,3 +127,4 @@ rest2.numGuest &&= 25;
   printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
   printGoals(...game.scored);
 }
+
