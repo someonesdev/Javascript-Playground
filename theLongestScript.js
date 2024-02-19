@@ -216,11 +216,9 @@ Lewandowski: 2 */
   average /= Object.values(game.odds).length;
 
   for (let [key, value] of Object.entries(game.odds)) {
-    if (key == "x") {
-      console.log(`Odds of draw: ${value}`);
-    } else {
-      console.log(`Odds of victory: ${game[key]}: ${value}`);
-    }
+    key == "x"
+      ? console.log(`Odds of draw: ${value}`)
+      : console.log(`Odds of victory for  ${game[key]}: ${value}`);
   }
 
   console.log(`Odd of draw: ${game.odds.x}`);
