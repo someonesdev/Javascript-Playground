@@ -219,7 +219,7 @@ Lewandowski: 2 */
     if (key == "x") {
       console.log(`Odds of draw: ${value}`);
     } else {
-      console.log(`${game[key]}: ${value}`);
+      console.log(`Odds of victory: ${game[key]}: ${value}`);
     }
   }
 
