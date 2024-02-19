@@ -1,3 +1,5 @@
+"use strict";
+
 // Random Udemy and Codewars exercises
 
 // Destructuring
@@ -204,22 +206,44 @@ Lewandowski: 2 */
     console.log(`Goal ${Number(index) + 1}: ${players}`);
   }
 
+  for (let [i, players] of game.scored.entries()) {
+    console.log(`Goal ${i + 1}: ${players}`);
+  }
+
+  let average = 0;
+  for (let entry of Object.values(game.odds)) average += entry;
+
+  average /= Object.values(game.odds).length;
+
+  for (let [key, value] of Object.entries(game.odds)) {
+    if (key == "x") {
+      console.log(`Odds of draw: ${value}`);
+    } else {
+      console.log(`${game[key]}: ${value}`);
+    }
+  }
+
+  console.log(`Odd of draw: ${game.odds.x}`);
+  console.log(`Odd of victory ${game.team2}: ${game.odds.team2}`);
+
   let scorers = {};
 
-{ // Three ways to create objects
-  
-   for (let i = 0; i < game.scored.length; i++) {
-    scorers[game.scored[i]] ??= 0;
-    scorers[game.scored[i]]++;
-  }
+  {
+    // Three ways to create objects
 
-  for (let i = 0; i < game.scored.length; i++) {
-    scorers[game.scored[i]] = (scorers[game.scored[i]] ?? 0) + 1;
-  }
+    for (let i = 0; i < game.scored.length; i++) {
+      scorers[game.scored[i]] ??= 0;
+      scorers[game.scored[i]]++;
+    }
 
-  for (let i = 0; i < game.scored.length; i++) {
-    scorers[game.scored[i]]
-      ? scorers[game.scored[i]]++
-      : (scorers[game.scored[i]] = 1);
-  }}
+    for (let i = 0; i < game.scored.length; i++) {
+      scorers[game.scored[i]] = (scorers[game.scored[i]] ?? 0) + 1;
+    }
+
+    for (let i = 0; i < game.scored.length; i++) {
+      scorers[game.scored[i]]
+        ? scorers[game.scored[i]]++
+        : (scorers[game.scored[i]] = 1);
+    }
+  }
 }
