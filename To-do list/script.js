@@ -34,7 +34,10 @@ function addTask() {
 
 allItems.forEach(function (listItem) {
   listItem.addEventListener("click", function () {
-    this.remove();
+    this.classList.add("completed");
+    this.addEventListener("transitionend", function () {
+      this.remove();
+    });
   });
 });
 
