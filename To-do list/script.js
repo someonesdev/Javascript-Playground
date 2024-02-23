@@ -20,26 +20,31 @@ function addTask() {
       "afterbegin",
       `<li class="list-item"><span>${task}</span></li>`
     );
-    let newTask = taskList.querySelector("li:first-child");
+    let newTask = taskList.querySelector(".list-item:first-child");
 
     newTask.addEventListener("click", function () {
-      this.remove();
+      this.classList.add("completed");
+      this.addEventListener("transitionend", function () {
+        this.remove();
+      });
     });
   }
   taskInput.value = "";
 }
 
-allItems.forEach(function (li) {
-  li.addEventListener("click", function () {
+allItems.forEach(function (listItem) {
+  listItem.addEventListener("click", function () {
     this.remove();
   });
 });
 
 function completeAll() {
-  let allLi = document.querySelectorAll("li");
-  allLi.forEach(function (li) {
-    li.remove();
-  });
+  allItems = document.querySelectorAll("li");
+  for (var i = 0; i < allItems.length; i++) {
+    allItems[i].classList.add("completed");
+    allItems[i].addEventListener("transitionend", function () {
+      this.remove();
+    });
+  }
 }
-
 deleteAll.addEventListener("click", completeAll);
