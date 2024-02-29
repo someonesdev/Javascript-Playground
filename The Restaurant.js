@@ -34,14 +34,6 @@ let restaurant = {
   },
 };
 
-const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-for (let day of days) {
-  if (restaurant.openingHours[day] === undefined) {
-    console.log(`On ${day}, we are closed`);
-  } else {
-    console.log(`On ${day}, we open at ${restaurant.openingHours[day].open}`);
-  }
-}
 
 let yourOrder = {
   name: "Alberto Salas",
@@ -71,3 +63,18 @@ rest2.numGuest ??= 20;
 // If the property exists (truty), change it.
 rest2.numGuest;
 rest2.numGuest &&= 25;
+
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+for (let day of days) {
+  if (restaurant.openingHours[day] === undefined) {
+    console.log(`On ${day}, we are closed`);
+  } else {
+    console.log(`On ${day}, we open at ${restaurant.openingHours[day].open}`);
+  }
+};
+
+for (let day of days){
+  let open = restaurant.openingHours[day]?.open || 'closed';
+  `On ${day}, we open at ${open}`
+}
