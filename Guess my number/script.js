@@ -41,3 +41,12 @@ function check() {
     message.textContent = "Go higher!";
   }
 }
+
+function again() {
+  checkButton.disabled = false;
+  guess.disabled = false;
+  gameScore = 20;
+  score.textContent = 20;
+  message.textContent = "Start guessing...";
+  number.textContent = "?";
+}
