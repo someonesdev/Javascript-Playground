@@ -23,40 +23,38 @@ guess.addEventListener("keydown", function (e) {
 
 function winning() {
   message.textContent = "YOU WON!";
-  checkBtn.disabled = true;
-  guess.disabled = true;
   document.body.style.backgroundColor = "#070";
-  number.textContent = randomNumber;
-  gameScore > gameHighScore ? (gameHighScore = gameScore) : gameHighScore;
-  highScore.textContent = gameHighScore;
+  gameHighScore = Math.max(gameScore, gameHighScore);
+  gameEnding();
 }
 
 function losing() {
   message.textContent = "YOU LOST!";
-  checkBtn.disabled = true;
-  guess.disabled = true;
   document.body.style.backgroundColor = "#900";
-  number.textContent = randomNumber;
-  gameScore > gameHighScore ? (gameHighScore = gameScore) : gameHighScore;
-  highScore.textContent = gameHighScore;
+  gameEnding();
   gameScore--;
   score.textContent = gameScore;
-  message.textContent = "YOU LOST";
+}
+
+function gameEnding() {
+  checkBtn.disabled = true;
+  guess.disabled = true;
+  number.textContent = randomNumber;
+  highScore.textContent = gameHighScore;
 }
 
 function check() {
-  let guess = document.querySelector(".guess").value;
-  console.log(guess);
-  if (!guess || guess > 20) {
+  let myGuess = guess.value;
+  if (!myGuess || myGuess > 20) {
     message.textContent = "That is not a valid number.";
-  } else if (guess == randomNumber) {
+  } else if (myGuess == randomNumber) {
     winning();
   } else if (gameScore <= 1) {
     losing();
   } else {
     gameScore--;
     score.textContent = gameScore;
-    guess > randomNumber
+    myGuess > randomNumber
       ? (message.textContent = "Go lower!")
       : (message.textContent = "Go higher!");
   }
