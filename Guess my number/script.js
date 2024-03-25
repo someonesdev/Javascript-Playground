@@ -1,4 +1,5 @@
 let randomNumber = Math.floor(Math.random() * 20) + 1;
+console.log(randomNumber);
 
 let secretNumber = document.querySelector(".number").textContent;
 let message = document.querySelector(".message");
@@ -30,6 +31,19 @@ function winning() {
   highScore.textContent = gameHighScore;
 }
 
+function losing() {
+  message.textContent = "YOU LOST!";
+  checkBtn.disabled = true;
+  guess.disabled = true;
+  document.body.style.backgroundColor = "#900";
+  number.textContent = randomNumber;
+  gameScore > gameHighScore ? (gameHighScore = gameScore) : gameHighScore;
+  highScore.textContent = gameHighScore;
+  gameScore--;
+  score.textContent = gameScore;
+  message.textContent = "YOU LOST";
+}
+
 function check() {
   let guess = document.querySelector(".guess").value;
   console.log(guess);
@@ -37,14 +51,14 @@ function check() {
     message.textContent = "That is not a valid number.";
   } else if (guess == randomNumber) {
     winning();
-  } else if (guess > randomNumber) {
-    gameScore--;
-    score.textContent = gameScore;
-    message.textContent = "Go lower!";
+  } else if (gameScore <= 1) {
+    losing();
   } else {
     gameScore--;
     score.textContent = gameScore;
-    message.textContent = "Go higher!";
+    guess > randomNumber
+      ? (message.textContent = "Go lower!")
+      : (message.textContent = "Go higher!");
   }
 }
 
