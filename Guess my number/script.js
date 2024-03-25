@@ -7,6 +7,7 @@ let checkBtn = document.querySelector(".check");
 let score = document.querySelector(".score");
 let number = document.querySelector(".number");
 let againBtn = document.querySelector(".again");
+let highScore = document.querySelector(".highscore");
 
 let gameScore = 20;
 let gameHighScore = 0;
@@ -24,6 +25,9 @@ function winning() {
   checkBtn.disabled = true;
   guess.disabled = true;
   document.body.style.backgroundColor = "#070";
+  number.textContent = randomNumber;
+  gameScore > gameHighScore ? (gameHighScore = gameScore) : gameHighScore;
+  highScore.textContent = gameHighScore;
 }
 
 function check() {
@@ -53,4 +57,5 @@ function again() {
   number.textContent = "?";
   document.body.style.backgroundColor = "#333";
   guess.value = "";
+  randomNumber = Math.floor(Math.random() * 20) + 1;
 }
