@@ -38,3 +38,4 @@ function checkIn(flightNum, passenger) {
 }
 
 checkIn(flight, passenger);
+console.log(flight)
