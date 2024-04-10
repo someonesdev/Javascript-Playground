@@ -49,3 +49,15 @@ let newPassport = function(person){
 
 newPassport(passenger);
 checkIn(flight, passenger);
+
+// Higher order functions
+
+function firstLetter(randomWord){
+  return randomWord.replace(randomWord[0], randomWord[0].toUpperCase());
+}
+
+function capitalizing(anotherWord, firstLetter){
+  return firstLetter(anotherWord);
+}
+
+capitalizing("miguel es un menso", firstLetter);
