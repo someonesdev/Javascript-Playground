@@ -39,3 +39,13 @@ function checkIn(flightNum, passenger) {
 
 checkIn(flight, passenger);
 console.log(flight)
+console.log(passenger)
+
+// Another example of using variables as parameters. When our parameters are objects, they will be affected.
+
+let newPassport = function(person){
+  person.passport = Math.trunc(Math.random()*1000000);
+}
+
+newPassport(passenger);
+checkIn(flight, passenger);
