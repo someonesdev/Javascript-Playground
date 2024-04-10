@@ -26,3 +26,15 @@ maskingCC("1382-2894-2938-9847");
 
 let message = "Nothing to worry about. ";
 let newMessage = message.repeat(5);
+
+// Higher order functions
+
+function firstLetter(randomWord){
+    return randomWord.replace(randomWord[0], randomWord[0].toUpperCase());
+  }
+  
+  function capitalizing(anotherWord, firstLetter){
+    return firstLetter(anotherWord);
+  }
+  
+  capitalizing("miguel es un menso", firstLetter);
