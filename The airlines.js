@@ -38,14 +38,30 @@ function checkIn(flightNum, passenger) {
 }
 
 checkIn(flight, passenger);
-console.log(flight)
-console.log(passenger)
+console.log(flight);
+console.log(passenger);
 
 // Another example of using variables as parameters. When our parameters are objects, they will be affected.
 
-let newPassport = function(person){
-  person.passport = Math.trunc(Math.random()*1000000);
-}
+let newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 1000000);
+};
 
 newPassport(passenger);
 checkIn(flight, passenger);
+
+// Call and apply methods.
+
+
+let lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name){
+    this.bookings.push({flight: this.iataCode, name});
+    return `${name} booked a seat on ${this.airline} flight ${flightNum}`;
+  }
+}
+
+lufthansa.book(2172, 'Jorge');
+lufthansa.bookings;
