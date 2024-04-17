@@ -52,15 +52,16 @@ checkIn(flight, passenger);
 
 // Call and apply methods.
 
-let lufthansa = {
-  airline: "Lufthansa",
-  iataCode: "LH",
-  bookings: [],
-  book(flightNum, name) {
-    this.bookings.push({ flight: this.iataCode, name });
-    return `${name} booked a seat on ${this.airline} flight ${flightNum}`;
-  },
-};
 
-lufthansa.book(2172, "Jorge");
+let lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name){
+    this.bookings.push({flight: this.iataCode, name});
+    return `${name} booked a seat on ${this.airline} flight ${flightNum}`;
+  }
+}
+
+lufthansa.book(2172, 'Jorge');
 lufthansa.bookings;
