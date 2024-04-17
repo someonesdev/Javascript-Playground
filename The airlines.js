@@ -15,3 +15,4 @@ const createBooking = function(flightNum = 0, numPassengers = 0, price = '$000')
 };
 
 createBooking(243, undefined, 656);
+
