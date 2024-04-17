@@ -29,13 +29,12 @@ let newMessage = message.repeat(5);
 
 // Higher order functions
 
-function firstLetter(randomWord){
-    return randomWord.replace(randomWord[0], randomWord[0].toUpperCase());
-  }
-  
-  function capitalizing(anotherWord, firstLetter){
-    return firstLetter(anotherWord);
-  }
-  
-  capitalizing("miguel es un menso", firstLetter);
->>>>>>> 069f425ea80df191c1f7f97e43ffdb4fd3ad5cb6:Random Exercises.js
+function firstLetter(randomWord) {
+  return randomWord.replace(randomWord[0], randomWord[0].toUpperCase());
+}
+
+function capitalizing(anotherWord, firstLetter) {
+  return firstLetter(anotherWord);
+}
+
+capitalizing("miguel es un menso", firstLetter);
