@@ -50,27 +50,45 @@ let newPassport = function (person) {
 newPassport(passenger);
 checkIn(flight, passenger);
 
-// Call and apply methods.
+// Call methods.
 
 let lufthansa = {
-  airline: 'Lufthansa',
-  iataCode: 'LH',
+  airline: "Lufthansa",
+  iataCode: "LH",
   bookings: [],
-  book(flightNum, name){
-    this.bookings.push({flight: flightNum, name});
+  book(flightNum, name) {
+    this.bookings.push({ flight: flightNum, name });
     return `${name} booked a seat on ${this.airline} flight ${flightNum}`;
-  }
-}
+  },
+};
 
 let book = lufthansa.book;
-lufthansa.book(2172, 'Jorge');
+lufthansa.book(2172, "Jorge");
 lufthansa.bookings;
 
 let eurowings = {
-  airline: 'Eurowings',
-  iatacode: 'EW',
-  bookings: []
-}
+  airline: "Eurowings",
+  iatacode: "EW",
+  bookings: [],
+};
 
-book.call(lufthansa, 9838, ' Zuniga' );
-lufthansa.bookings;
+book.call(eurowings, 9838, "Jorge Zuniga");
+eurowings.bookings;
+
+book.call(lufthansa, 9838, "Mary Cooper");
+
+let swiss = {
+  airline: "Swiss Airlines",
+  iatacode: "SA",
+  bookings: [],
+};
+
+book.call(swiss, 1763, "Mary Cooper");
+swiss.bookings;
+
+
+// Apply method (same as call method but it takes an array instead of individual parameters)
+
+let flightInfo = [1763, 'John Stamos'];
+book.apply(swiss, flightInfo);
+swiss.bookings; 
