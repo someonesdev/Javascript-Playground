@@ -86,9 +86,16 @@ let swiss = {
 book.call(swiss, 1763, "Mary Cooper");
 swiss.bookings;
 
-
 // Apply method (same as call method but it takes an array instead of individual parameters)
 
-let flightInfo = [1763, 'John Stamos'];
+let flightInfo = [1763, "John Stamos"];
 book.apply(swiss, flightInfo);
-swiss.bookings; 
+swiss.bookings;
+
+// Bind method!
+
+let bookEU = book.bind(eurowings);
+let bookSA = book.bind(swiss);
+let bookLU = book.bind(lufthansa, 9999, 'Anonymous');
+
+bookLU(8723, 'Peter Petigrew');
