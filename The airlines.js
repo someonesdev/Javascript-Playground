@@ -175,14 +175,8 @@ const poll = {
   },
 };
 
-let data1 = [5, 2, 3];
-let data2 = [1, 5, 3, 9, 6, 1];
-
-let displaying = poll.displayResults.bind(poll);
-
-displaying(data1);
 
 poll.registerNewAnswer();
 poll.answers;
 
-poll.displayResults("d");
+poll.displayResults.call({answers: [5,2,3]}, 'string');
