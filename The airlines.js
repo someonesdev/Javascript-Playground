@@ -179,4 +179,6 @@ const poll = {
 poll.registerNewAnswer();
 poll.answers;
 
+// We can manually set the this keyword to a just created object.
+
 poll.displayResults.call({answers: [5,2,3]}, 'string');
