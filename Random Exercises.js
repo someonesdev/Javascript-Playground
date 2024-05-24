@@ -50,3 +50,9 @@ for (let i = 0; i < numbers.length; i++) {
 for (let number of numbers){
   console.log(number);
 }
+
+// Slice & Splice
+
+console.log(numbers.slice(-1));
+console.log(numbers.splice(-1));
+numbers;
