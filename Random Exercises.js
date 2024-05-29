@@ -51,9 +51,10 @@ for (let number of numbers){
   console.log(number);
 }
 
-// Slice & Splice
+// Slice & Splice (mutates the array)
 
 console.log(numbers.slice(-1));
+numbers;
 console.log(numbers.splice(-1));
 numbers;
 
