@@ -47,14 +47,13 @@ for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i]);
 }
 
-for (let number of numbers){
+for (let number of numbers) {
   console.log(number);
 }
 
-// Slice & Splice (mutates the array)
+// Slice & Splice (the splice method mutates the array)
 
 console.log(numbers.slice(-1));
 numbers;
 console.log(numbers.splice(-1));
 numbers;
-
