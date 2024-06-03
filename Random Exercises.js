@@ -56,4 +56,11 @@ for (let number of numbers) {
 console.log(numbers.slice(-1));
 numbers;
 console.log(numbers.splice(-1));
+numbers.push(5);
 numbers;
+
+// For of
+
+for(let number of numbers){
+  console.log(number);
+}
