@@ -65,15 +65,33 @@ for (let number of numbers) {
   console.log(number);
 }
 
+{
+  let statement = [300, -200, 500, -200, 700];
+
+  for (let transaction of statement) {
+    if (transaction > 0) {
+      console.log(`You deposited ${transaction}`);
+    } else {
+      console.log(`You withdrew ${transaction}`);
+    }
+  }
+
+  statement.forEach((transaction) => {
+    console.log(
+      `You ${transaction > 0 ? "deposited" : "withdrew"} ${Math.abs(transaction)}`
+    );
+  });
+}
+
 // FOR IN
 
 let person = {
-name: 'Jorge',
-age: 35,
-lastName: 'Zuniga'
-}
+  name: "Jorge",
+  age: 35,
+  lastName: "Zuniga",
+};
 
-for (let key in person){
+for (let key in person) {
   console.log(key);
 }
 
