@@ -59,13 +59,25 @@ console.log(numbers.splice(-1));
 numbers.push(5);
 numbers;
 
-// For of
+// FOR OF
 
 for (let number of numbers) {
   console.log(number);
 }
 
-// For each
+// FOR IN
+
+let person = {
+name: 'Jorge',
+age: 35,
+lastName: 'Zuniga'
+}
+
+for (let key in person){
+  console.log(key);
+}
+
+// FOR EACH
 
 numbers = [1, -2, 3, -4, 5];
 
