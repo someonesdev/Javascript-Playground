@@ -61,6 +61,16 @@ numbers;
 
 // For of
 
-for(let number of numbers){
+for (let number of numbers) {
   console.log(number);
 }
+
+// For each
+
+numbers = [1, -2, 3, -4, 5];
+
+numbers.forEach((item) => {
+  console.log(item * -1);
+});
+
+numbers.forEach((number) => console.log(number));
