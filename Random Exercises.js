@@ -107,3 +107,8 @@ numbers.forEach((item) => {
 });
 
 numbers.forEach((number) => console.log(number));
+
+// REDUCE
+
+console.log(numbers.reduce((item, currentValue) =>
+  item + currentValue, 0));
