@@ -78,7 +78,9 @@ for (let number of numbers) {
 
   statement.forEach((transaction) => {
     console.log(
-      `You ${transaction > 0 ? "deposited" : "withdrew"} ${Math.abs(transaction)}`
+      `You ${transaction > 0 ? "deposited" : "withdrew"} ${Math.abs(
+        transaction
+      )}`
     );
   });
 }
@@ -91,8 +93,9 @@ let person = {
   lastName: "Zuniga",
 };
 
-for (let key in person) {
+for (let [key, value] of Object.entries(person)) {
   console.log(key);
+  console.log(value);
 }
 
 // FOR EACH
