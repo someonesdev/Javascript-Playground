@@ -2,7 +2,6 @@ let array = [1, 2, 3, 4, 5];
 
 // Use reduce to calculate the sum of array elements
 
-
 console.log(array.reduce((number, total) => number + total, 0));
 
 /* 
