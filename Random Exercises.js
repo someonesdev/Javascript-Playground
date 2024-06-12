@@ -68,6 +68,13 @@ for (let number of numbers) {
 {
   let statement = [300, -200, 500, -200, 700];
 
+
+
+
+  
+
+
+
   for (let transaction of statement) {
     if (transaction > 0) {
       console.log(`You deposited ${transaction}`);
